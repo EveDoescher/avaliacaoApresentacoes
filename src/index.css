@@ -1,0 +1,1402 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Calibri, Arial, sans-serif;
+  color: #000;
+  background: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* =========================================================
+   INTERFACE
+   ========================================================= */
+
+.app {
+  min-height: 100vh;
+  padding: 28px 20px 60px;
+  background: #e5e7eb;
+}
+
+.app-toolbar {
+  width: 595.32pt;
+  max-width: 100%;
+  margin: 0 auto 20px;
+}
+
+.app-toolbar h1 {
+  margin: 0;
+  color: #171717;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.app-toolbar p {
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.document-area {
+  display: flex;
+  justify-content: center;
+  min-width: max-content;
+}
+
+.document-pages {
+  display: flex;
+  flex-direction: column;
+  gap: 24pt;
+}
+
+/* =========================================================
+   A4
+   ========================================================= */
+
+.a4-page {
+  position: relative;
+  width: 595.32pt;
+  height: 841.92pt;
+  flex: none;
+  overflow: hidden;
+  background: #fff;
+  font-family: Calibri, Arial, sans-serif;
+
+  box-shadow:
+    0 10px 30px rgb(0 0 0 / 14%),
+    0 2px 5px rgb(0 0 0 / 8%);
+}
+
+/* =========================================================
+   PÁGINA 1
+   ========================================================= */
+
+.page-one-eyebrow {
+  position: absolute;
+  left: 56.7pt;
+  top: 55.83pt;
+  margin: 0;
+  color: #1f4e79;
+  font-size: 10.02pt;
+  font-weight: 700;
+  line-height: 13.91pt;
+  white-space: nowrap;
+}
+
+.page-one-title {
+  position: absolute;
+  left: 56.7pt;
+  top: 70.34pt;
+  margin: 0;
+  color: #1b2a3a;
+  font-size: 18pt;
+  font-weight: 700;
+  line-height: 24.98pt;
+  white-space: nowrap;
+}
+
+.page-one-subtitle {
+  position: absolute;
+  left: 56.7pt;
+  top: 96.16pt;
+  margin: 0;
+  color: #5a6072;
+  font-size: 10.02pt;
+  line-height: 13.41pt;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   TABELA PÁGINA 1
+   ========================================================= */
+
+.student-table {
+  position: absolute;
+  left: 56.7pt;
+  top: 116.94pt;
+  width: 482.4pt;
+
+  display: grid;
+
+  grid-template-columns:
+    150.24pt
+    332.16pt;
+
+  grid-template-rows:
+    21.18pt
+    26.94pt
+    26.94pt
+    26.88pt
+    27.48pt;
+
+  border: 0.48pt solid #c5d3e3;
+  background: #fff;
+}
+
+.student-table-cell {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+
+  border-right: 0.48pt solid #c5d3e3;
+  border-bottom: 0.48pt solid #c5d3e3;
+}
+
+.student-table-cell:nth-child(even) {
+  border-right: 0;
+}
+
+.student-table-cell:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.student-table-header {
+  display: flex;
+  align-items: center;
+
+  padding: 0 5.22pt;
+
+  background: #1b2a3a;
+  color: #fff;
+
+  font-size: 10.02pt;
+  font-weight: 700;
+  line-height: 13.91pt;
+}
+
+.student-table-label {
+  display: flex;
+  align-items: center;
+
+  padding: 0 5.22pt;
+
+  color: #000;
+
+  font-size: 10.02pt;
+  font-weight: 700;
+  line-height: 13.91pt;
+}
+
+.student-table-header > span,
+.student-table-label > span {
+  display: block;
+  width: 100%;
+}
+
+.student-table-input-cell {
+  overflow: hidden;
+}
+
+.student-table-input-cell input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  padding:
+    2.9pt
+    4.74pt
+    0;
+
+  border: 0;
+  border-radius: 0;
+  outline: none;
+
+  background: transparent;
+
+  color: #000;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 10.98pt;
+  line-height: 14.7pt;
+
+  appearance: none;
+}
+
+.student-table-input-cell input:hover {
+  background: rgb(219 234 254 / 20%);
+}
+
+.student-table-input-cell input:focus {
+  background: rgb(219 234 254 / 32%);
+  box-shadow: inset 0 0 0 0.7pt #60a5fa;
+}
+
+/* =========================================================
+   INSTRUÇÕES
+   ========================================================= */
+
+.instructions-title {
+  position: absolute;
+  left: 56.7pt;
+  top: 253.43pt;
+
+  margin: 0;
+
+  color: #1b2a3a;
+
+  font-size: 10.98pt;
+  font-weight: 700;
+  line-height: 15.24pt;
+}
+
+.instruction {
+  position: absolute;
+  left: 74.7pt;
+
+  width: 463pt;
+
+  margin: 0;
+
+  color: #000;
+
+  font-size: 10.98pt;
+  line-height: 15.42pt;
+}
+
+.instruction::before {
+  content: "•";
+
+  position: absolute;
+  left: -12pt;
+  top: 0;
+
+  font-size: 10.98pt;
+}
+
+.instruction strong {
+  font-weight: 700;
+}
+
+.instruction-1 {
+  top: 270.84pt;
+}
+
+.instruction-2 {
+  top: 289.31pt;
+}
+
+.instruction-3 {
+  top: 307.74pt;
+}
+
+.instruction-4 {
+  top: 341.63pt;
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.document-footer {
+  position: absolute;
+
+  top: 794.89pt;
+  right: 56.62pt;
+
+  margin: 0;
+
+  color: #5a6072;
+
+  font-size: 9pt;
+  line-height: 12.04pt;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   APRESENTAÇÕES
+   ========================================================= */
+
+.presentation-title {
+  position: absolute;
+
+  left: 56.7pt;
+  top: 55.39pt;
+
+  margin: 0;
+
+  color: #1b2a3a;
+
+  font-size: 15pt;
+  font-weight: 700;
+  line-height: 20.82pt;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   TEMA / INTEGRANTES
+   ========================================================= */
+
+.presentation-info-table {
+  position: absolute;
+
+  left: 56.7pt;
+  top: 81pt;
+
+  width: 482.4pt;
+  height: 79.08pt;
+
+  display: grid;
+
+  grid-template-columns:
+    150.48pt
+    331.92pt;
+
+  grid-template-rows:
+    21.24pt
+    28.92pt
+    28.92pt;
+
+  border: 0.48pt solid #c5d3e3;
+}
+
+.presentation-info-header,
+.presentation-info-label,
+.presentation-info-input {
+  min-width: 0;
+  min-height: 0;
+
+  border-right: 0.48pt solid #c5d3e3;
+  border-bottom: 0.48pt solid #c5d3e3;
+}
+
+.presentation-info-table > :nth-child(even) {
+  border-right: 0;
+}
+
+.presentation-info-table > :nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.presentation-info-header {
+  display: flex;
+  align-items: center;
+
+  padding: 0 4.74pt;
+
+  background: #1b2a3a;
+
+  color: #fff;
+
+  font-size: 10.02pt;
+  font-weight: 700;
+  line-height: 13.91pt;
+}
+
+.presentation-info-label {
+  display: flex;
+  align-items: center;
+
+  padding: 0 4.74pt;
+
+  color: #000;
+
+  font-size: 10.02pt;
+  font-weight: 700;
+  line-height: 13.91pt;
+}
+
+.presentation-info-header > span,
+.presentation-info-label > span {
+  display: block;
+  width: 100%;
+}
+
+.presentation-info-input {
+  overflow: hidden;
+}
+
+.presentation-info-input input {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+
+  padding:
+    3pt
+    4.74pt
+    0;
+
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #000;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 10.02pt;
+}
+
+.presentation-info-input input:hover {
+  background: rgb(219 234 254 / 20%);
+}
+
+.presentation-info-input input:focus {
+  background: rgb(219 234 254 / 32%);
+  box-shadow: inset 0 0 0 0.7pt #60a5fa;
+}
+
+/* =========================================================
+   CRITÉRIOS
+   ========================================================= */
+
+.criteria-table {
+  position: absolute;
+
+  left: 56.7pt;
+  top: 178.02pt;
+
+  width: 482.4pt;
+  height: 182.04pt;
+
+  display: grid;
+
+  grid-template-columns:
+    125.52pt
+    216.9pt
+    139.98pt;
+
+  grid-template-rows:
+    20.58pt
+    repeat(5, 32.22pt);
+
+  border: 0.48pt solid #c5d3e3;
+}
+
+.criteria-header {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+
+  padding: 0 4.74pt;
+
+  border-right: 0.48pt solid #c5d3e3;
+  border-bottom: 0.48pt solid #c5d3e3;
+
+  background: #1b2a3a;
+
+  color: #fff;
+
+  font-size: 9.48pt;
+  font-weight: 700;
+  line-height: 11.58pt;
+}
+
+.criteria-header:nth-child(3) {
+  border-right: 0;
+}
+
+.criteria-header > span {
+  display: block;
+  width: 100%;
+}
+
+.criteria-row {
+  grid-column: 1 / -1;
+
+  display: grid;
+
+  grid-template-columns:
+    125.52pt
+    216.9pt
+    139.98pt;
+
+  min-height: 0;
+
+  border-bottom: 0.48pt solid #c5d3e3;
+}
+
+.criteria-row:last-child {
+  border-bottom: 0;
+}
+
+.criteria-title,
+.criteria-description,
+.criteria-rating {
+  min-width: 0;
+  min-height: 0;
+
+  border-right: 0.48pt solid #c5d3e3;
+}
+
+.criteria-title {
+  display: flex;
+  align-items: center;
+
+  padding: 0 4.74pt;
+
+  color: #000;
+
+  font-size: 9.48pt;
+  font-weight: 700;
+  line-height: 11.58pt;
+}
+
+.criteria-description {
+  display: flex;
+  align-items: center;
+
+  padding: 0 4.74pt;
+
+  color: #000;
+
+  font-size: 9.48pt;
+  font-weight: 400;
+  line-height: 11.58pt;
+}
+
+.criteria-title > span,
+.criteria-description > span {
+  display: block;
+  width: 100%;
+}
+
+.criteria-rating {
+  position: relative;
+
+  border-right: 0;
+}
+
+/* =========================================================
+   NOTAS
+   ========================================================= */
+
+.rating {
+  position: absolute;
+
+  left: 4.92pt;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  display: block;
+}
+
+.rating-option {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 23.1pt;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+/* Posições independentes */
+
+.rating-option:nth-child(1) {
+  left: 0;
+}
+
+.rating-option:nth-child(2) {
+  left: 23.1pt;
+}
+
+.rating-option:nth-child(3) {
+  left: 46.2pt;
+}
+
+.rating-option:nth-child(4) {
+  left: 69.3pt;
+}
+
+.rating-option:nth-child(5) {
+  left: 92.4pt;
+}
+
+/*
+   O quadrado não depende mais de flex,
+   baseline ou line-height.
+*/
+
+.rating-box {
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  width: 6.6pt;
+  height: 6.6pt;
+
+  margin: 0;
+
+  transform: translateY(-50%);
+
+  border: 0.72pt solid #000;
+
+  background: #fff;
+}
+
+.rating-check {
+  position: absolute;
+
+  left: 0.72pt;
+  top: 0.72pt;
+
+  display: block;
+
+  width: 4.4pt;
+  height: 4.4pt;
+
+  overflow: visible;
+}
+
+.rating-check path {
+  fill: none;
+
+  stroke: #000;
+  stroke-width: 1.15;
+  stroke-linecap: square;
+}
+
+/*
+   O número possui seu próprio eixo vertical.
+
+   -0.75pt é proposital:
+   compensa a métrica óptica da Calibri
+   que estava fazendo o algarismo parecer
+   mais baixo que o quadrado.
+*/
+
+.rating-number {
+  position: absolute;
+
+  left: 9.9pt;
+  top: calc(50% - 0.75pt);
+
+  width: 8pt;
+
+  margin: 0;
+  padding: 0;
+
+  transform: translateY(-50%);
+
+  color: #000;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 9.48pt;
+  font-weight: 400;
+  line-height: 9.48pt;
+
+  text-align: center;
+}
+
+.rating-option:hover .rating-box {
+  background: rgb(219 234 254 / 35%);
+}
+
+.rating-option:focus-visible {
+  outline: none;
+}
+
+.rating-option:focus-visible .rating-box {
+  box-shadow: 0 0 0 0.7pt #60a5fa;
+}
+
+/* =========================================================
+   COMENTÁRIOS
+   ========================================================= */
+
+.comments-table {
+  position: absolute;
+
+  left: 56.7pt;
+  top: 377.52pt;
+
+  width: 482.4pt;
+
+  border: 0.48pt solid #c5d3e3;
+}
+
+.comment-row {
+  display: grid;
+
+  grid-template-columns:
+    150.48pt
+    331.92pt;
+
+  height: 47.4pt;
+
+  border-bottom: 0.48pt solid #c5d3e3;
+}
+
+.comment-row-learning {
+  height: 58.38pt;
+}
+
+.comment-row-question {
+  height: 58.44pt;
+  border-bottom: 0;
+}
+
+.comment-label {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+
+  padding: 0 4.74pt;
+
+  border-right: 0.48pt solid #c5d3e3;
+
+  color: #000;
+
+  font-size: 10.02pt;
+  font-weight: 700;
+  line-height: 12.3pt;
+}
+
+.comment-label > span {
+  display: block;
+  width: 100%;
+}
+
+.comment-field {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.comment-field textarea {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+
+  padding:
+    3.2pt
+    4.74pt;
+
+  resize: none;
+
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #000;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 10.02pt;
+  line-height: 12.5pt;
+
+  scrollbar-width: none;
+}
+
+.comment-field textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.comment-field textarea:hover {
+  background: rgb(219 234 254 / 20%);
+}
+
+.comment-field textarea:focus {
+  background: rgb(219 234 254 / 32%);
+  box-shadow: inset 0 0 0 0.7pt #60a5fa;
+}
+
+/* =========================================================
+   PÁGINA 5
+   ========================================================= */
+
+.closing-title {
+  position: absolute;
+
+  left: 56.7pt;
+  top: 55.295pt;
+
+  margin: 0;
+
+  color: #1b2a3a;
+
+  font-size: 16.02pt;
+  font-weight: 700;
+  line-height: 22.24pt;
+
+  white-space: nowrap;
+}
+
+.closing-table {
+  position: absolute;
+
+  left: 56.7pt;
+  top: 84.24pt;
+
+  width: 482.4pt;
+
+  border: 0.48pt solid #c5d3e3;
+
+  background: #fff;
+}
+
+.closing-row {
+  display: grid;
+
+  grid-template-columns:
+    180.48pt
+    301.92pt;
+
+  border-bottom: 0.48pt solid #c5d3e3;
+}
+
+.closing-row-1 {
+  height: 75.36pt;
+}
+
+.closing-row-2 {
+  height: 87.12pt;
+}
+
+.closing-row-3 {
+  height: 87.18pt;
+  border-bottom: 0;
+}
+
+.closing-label {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+
+  padding: 0 5.22pt;
+
+  border-right: 0.48pt solid #c5d3e3;
+
+  color: #000;
+
+  font-size: 10.02pt;
+  font-weight: 700;
+  line-height: 12.24pt;
+}
+
+.closing-label > span {
+  display: block;
+  width: 100%;
+}
+
+.closing-field {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.closing-field textarea {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+
+  padding:
+    3.2pt
+    4.74pt;
+
+  resize: none;
+
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #000;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 10.02pt;
+  line-height: 12.5pt;
+
+  scrollbar-width: none;
+}
+
+.closing-field textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.closing-field textarea:hover {
+  background: rgb(219 234 254 / 20%);
+}
+
+.closing-field textarea:focus {
+  background: rgb(219 234 254 / 32%);
+  box-shadow: inset 0 0 0 0.7pt #60a5fa;
+}
+
+.closing-note {
+  position: absolute;
+
+  left: 56.7pt;
+  top: 339.306pt;
+
+  margin: 0;
+
+  color: #5a6072;
+
+  font-size: 9pt;
+  line-height: 12.04pt;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   BOTÃO FLUTUANTE
+   ========================================================= */
+
+.floating-export-button {
+  position: fixed;
+
+  right: 28px;
+  bottom: 28px;
+
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding:
+    12px
+    17px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #1b2a3a;
+
+  color: #fff;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 20px rgb(27 42 58 / 24%);
+
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.floating-export-button:hover {
+  transform: translateY(-2px);
+
+  background: #253c54;
+
+  box-shadow:
+    0 10px 26px rgb(27 42 58 / 30%);
+}
+
+.floating-export-button:active {
+  transform: translateY(0);
+}
+
+.floating-export-icon {
+  display: grid;
+  place-items: center;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: rgb(255 255 255 / 13%);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.export-modal-backdrop {
+  position: fixed;
+  inset: 0;
+
+  z-index: 100;
+
+  display: grid;
+  place-items: center;
+
+  padding: 24px;
+
+  background: rgb(15 23 32 / 48%);
+
+  backdrop-filter: blur(3px);
+}
+
+.export-modal {
+  width: 100%;
+  max-width: 410px;
+
+  padding:
+    31px
+    32px
+    28px;
+
+  border-radius: 14px;
+
+  background: #fff;
+
+  text-align: center;
+
+  box-shadow:
+    0 24px 70px rgb(0 0 0 / 22%);
+}
+
+.export-modal-icon,
+.export-success-icon {
+  width: 68px;
+  height: 68px;
+
+  margin:
+    0 auto
+    18px;
+}
+
+.export-modal-icon svg,
+.export-success-icon svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.export-modal-title {
+  margin: 0;
+
+  color: #1b2a3a;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.export-modal-description {
+  margin:
+    9px
+    auto
+    0;
+
+  max-width: 310px;
+
+  color: #5a6072;
+
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.export-modal-actions {
+  display: flex;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+/* =========================================================
+   BOTÕES MODAL
+   ========================================================= */
+
+.modal-button {
+  padding:
+    10px
+    17px;
+
+  border-radius: 7px;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.modal-button-primary {
+  border: 1px solid #1b2a3a;
+
+  background: #1b2a3a;
+
+  color: #fff;
+}
+
+.modal-button-primary:hover {
+  background: #263d54;
+}
+
+.modal-button-secondary {
+  border: 1px solid #c5d3e3;
+
+  background: #fff;
+
+  color: #1b2a3a;
+}
+
+.modal-button-secondary:hover {
+  background: #f5f7fa;
+}
+
+/* =========================================================
+   ÍCONE PDF
+   ========================================================= */
+
+.pdf-icon-page {
+  fill: #edf3f8;
+
+  stroke: #1f4e79;
+  stroke-width: 2.2;
+}
+
+.pdf-icon-fold {
+  fill: none;
+
+  stroke: #1f4e79;
+  stroke-width: 2.2;
+
+  stroke-linejoin: round;
+}
+
+.pdf-icon-label {
+  fill: #1b2a3a;
+}
+
+.pdf-icon-text {
+  fill: #fff;
+
+  font-family: Arial, sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   PROGRESSO
+   ========================================================= */
+
+.export-progress {
+  width: 100%;
+  height: 7px;
+
+  margin-top: 27px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #e4eaf0;
+}
+
+.export-progress-bar {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #1f4e79;
+
+  transition: width 220ms ease;
+}
+
+.export-progress-label {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #5a6072;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   SUCESSO
+   ========================================================= */
+
+.export-success-icon {
+  animation:
+    export-success-pop
+    260ms ease-out;
+}
+
+@keyframes export-success-pop {
+  from {
+    transform: scale(0.82);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.export-download-help {
+  margin:
+    10px
+    auto
+    0;
+
+  max-width: 315px;
+
+  color: #5a6072;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.download-again {
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #1f4e79;
+
+  font: inherit;
+  font-weight: 700;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+.download-again:hover {
+  color: #1b2a3a;
+}
+
+.success-close-button {
+  margin-top: 23px;
+}
+
+/* =========================================================
+   ERRO
+   ========================================================= */
+
+.export-modal-error-symbol {
+  display: grid;
+  place-items: center;
+
+  width: 58px;
+  height: 58px;
+
+  margin:
+    0 auto
+    18px;
+
+  border-radius: 50%;
+
+  background: #feecec;
+
+  color: #a72d2d;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   EXPORTAÇÃO
+   ========================================================= */
+
+.pdf-exporting .a4-page {
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+.pdf-exporting
+.student-table-input-cell
+input,
+
+.pdf-exporting
+.presentation-info-input
+input,
+
+.pdf-exporting
+.comment-field
+textarea,
+
+.pdf-exporting
+.closing-field
+textarea {
+  background: transparent !important;
+
+  border: 0 !important;
+  outline: 0 !important;
+
+  box-shadow: none !important;
+
+  caret-color: transparent !important;
+}
+
+.pdf-exporting .rating-option {
+  background: transparent !important;
+
+  outline: 0 !important;
+
+  box-shadow: none !important;
+}
+
+.pdf-exporting .rating-box {
+  background: #fff !important;
+
+  box-shadow: none !important;
+}
+
+.pdf-exporting
+.rating-option:hover
+.rating-box {
+  background: #fff !important;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .app {
+    padding:
+      20px
+      14px
+      80px;
+  }
+
+  .floating-export-button {
+    right: 18px;
+    bottom: 18px;
+  }
+}
