@@ -48,6 +48,12 @@ body {
 
   margin: 0;
 
+  /*
+   * A rolagem horizontal pertence ao documento inteiro,
+   * não a uma caixa interna.
+   */
+  overflow-x: auto;
+
 }
 
 
@@ -111,12 +117,19 @@ body {
 
 
 .document-area {
-  width: 100%;
+  /*
+   * Não cria uma área de rolagem própria.
+   *
+   * Quando a A4 for maior que a tela, quem rola é a própria página
+   * do navegador. Assim o documento fica "parado" no layout e o
+   * usuário navega pelo viewport inteiro.
+   */
+  width: max-content;
+  min-width: 100%;
 
-  overflow-x: auto;
-  overflow-y: visible;
+  margin: 0 auto;
 
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
 }
 
 
@@ -2817,14 +2830,41 @@ textarea {
 
   .app {
 
+    /*
+     * Sem padding lateral no mobile: ele criava uma "janela"
+     * visual menor que a tela ao redor do documento.
+     */
     padding:
 
       20px
 
-      14px
+      0
 
       80px;
 
+  }
+
+  .app-toolbar {
+    width: 100vw;
+    max-width: 100vw;
+
+    margin:
+      0
+      0
+      20px;
+
+    padding:
+      0
+      14px;
+  }
+
+  .document-area {
+    width: max-content;
+    min-width: 100vw;
+
+    margin: 0;
+
+    overflow: visible;
   }
 
 
